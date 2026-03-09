@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Smart To-Do Manager</title>
+
+  <style>
+
+    body{
+      font-family:Arial;
+      background:#f4f6fb;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      margin:0;
+    }
+
+    .container{
+      width:450px;
+      background:white;
+      padding:25px;
+      border-radius:10px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    h2{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .inputArea{
+      display:flex;
+      gap:10px;
+    }
+
+    input{
+      flex:1;
+      padding:10px;
+      border:1px solid #ccc;
+      border-radius:6px;
+    }
+
+    button{
+      padding:10px 14px;
+      border:none;
+      background:#4a6cf7;
+      color:white;
+      border-radius:6px;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#3556d8;
+    }
+
+    .controls{
+      display:flex;
+      justify-content:space-between;
+      margin-top:15px;
+    }
+
+    .controls button{
+      background:#eee;
+      color:black;
+    }
+
+    .controls button:hover{
+      background:#ddd;
+    }
+
+    ul{
+      list-style:none;
+      padding:0;
+      margin-top:20px;
+    }
+
+    li{
+      background:#fafafa;
+      padding:12px;
+      margin-bottom:10px;
+      border-radius:6px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      transition:0.3s;
+    }
+
+    li:hover{
+      background:#f0f0f0;
+    }
+
+    .taskText{
+      cursor:pointer;
+    }
+
+    .completed .taskText{
+      text-decoration:line-through;
+      color:gray;
+    }
+
+    .icons{
+      display:flex;
+      gap:10px;
+    }
+
+    .icon{
+      cursor:pointer;
+      font-size:18px;
+    }
+
+    .time{
+      font-size:11px;
+      color:#777;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2>Task Manager</h2>
+
+  <div class="inputArea">
+    <input id="taskInput" placeholder="Enter task...">
+    <button onclick="manager.addTask()">Add</button>
+  </div>
+
+  <div class="controls">
+
+    <div>
+      <button onclick="manager.filter('all')">All</button>
+      <button onclick="manager.filter('complete')">Completed</button>
+      <button onclick="manager.filter('incomplete')">Incomplete</button>
+    </div>
+
+    <div>
+      <button onclick="manager.sortAlpha()">A-Z</button>
+      <button onclick="manager.sortTime()">Time</button>
+    </div>
+
+  </div>
+
+  <ul id="taskList"></ul>
+
+</div>
+
+<script src="404.js"></script>
+
+</body>
+</html>
